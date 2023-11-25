@@ -4,24 +4,25 @@
 
 ![image](https://github.com/miyeon48/study-design-pattern/assets/17865304/a757a754-5a70-4ebc-b532-93d5bb1c8135)
 
+---
 ### 필요 상황
-✔ 객체의 상태변화에 대한 처리가 필요할 때
 
-✔ 이벤트 처리 및 핸들링이 필요할 때
+- 객체의 상태변화에 대한 처리가 필요할 때
+- 이벤트 처리 및 핸들링이 필요할 때
+- 통신
+  (분산 시스템에서 효과적인 통신 시 출판 구독 패턴도 많이 사용됨)
 
-✔ 통신
-
-분산 시스템에서 효과적인 통신 시 출판 구독 패턴도 많이 사용됨
-
+---
 ### 옵저버 패턴 적용 예제
 
-> 스프링 프레임워크 이벤트 동작원리 
 
-- ApplicationListener ▶ Observer
-- ApplicationEventPublisher ▶ Subject
+스프링 프레임워크 이벤트 동작원리
+
+- ApplicationListener ➡️ Observer
+- ApplicationEventPublisher ➡️ Subject
 
   
-1. 옵저버 생성 (리스너 등록) 
+> 1. 옵저버 생성 (리스너 등록) 
 ```JAVA
 @Component
 public class ObserverListenerA implements ApplicationListener<AppEvent> {
@@ -32,6 +33,7 @@ public class ObserverListenerA implements ApplicationListener<AppEvent> {
     }
 }
 ```
+
 ```JAVA
 @Component
 public class ObserverListenerB implements ApplicationListener<AppEvent> {
@@ -43,7 +45,7 @@ public class ObserverListenerB implements ApplicationListener<AppEvent> {
 }
 ```
 
-2. 정보 갱신
+> 2. Subject가 Observer에게 정보 갱신요청
 
 ```JAVA
 @Component
@@ -60,7 +62,7 @@ public class AppRunner implements ApplicationRunner {
 
 ```
 
-3. Subject - Observer 간 느슨한 결합
+> 3. Subject - Observer 간 느슨한 결합은 어떻게 할까 (스프링 내부코드) 
 
 
 
