@@ -11,11 +11,7 @@
 
 ✔ 통신
 
-분산 시스템에서 효과적인 통신? -> 출판 구독 패턴도 많이 사용됨
-
-
-### 옵저버 vs 출판-구독 패턴
-> 작성예정
+분산 시스템에서 효과적인 통신 시 출판 구독 패턴도 많이 사용됨
 
 ### 옵저버 패턴 적용 예제
 
@@ -24,7 +20,7 @@
 - ApplicationListener ▶ Observer
 - ApplicationEventPublisher ▶ Subject
 
-
+  
 1. 옵저버 생성 (리스너 등록) 
 ```JAVA
 @Component
@@ -63,3 +59,15 @@ public class AppRunner implements ApplicationRunner {
 }
 
 ```
+
+3. Subject - Observer 간 느슨한 결합
+
+
+
+
+
+
+### 옵저버 vs 출판-구독 패턴
+> 작성예정
+
+
