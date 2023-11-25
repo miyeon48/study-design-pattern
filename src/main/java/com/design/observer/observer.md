@@ -18,11 +18,11 @@
 
 스프링 프레임워크 이벤트 동작원리
 
-- ApplicationListener ➡️ Observer
-- ApplicationEventPublisher ➡️ Subject
+- Observer ➡️ ApplicationListener  
+- Subject  ➡️ ApplicationEventPublisher  
 
-  
-> 1. 옵저버 생성 (리스너 등록) 
+
+1. 옵저버 생성 (리스너 등록) 
 ```JAVA
 @Component
 public class ObserverListenerA implements ApplicationListener<AppEvent> {
@@ -45,7 +45,10 @@ public class ObserverListenerB implements ApplicationListener<AppEvent> {
 }
 ```
 
-> 2. Subject가 Observer에게 정보 갱신요청
+
+2. Subject가 Observer에게 정보 갱신요청
+> ApplicationEventPublisher는 주로 Spring Context에 의해서 구현되어 사용됩니다.
+
 
 ```JAVA
 @Component
@@ -62,10 +65,9 @@ public class AppRunner implements ApplicationRunner {
 
 ```
 
-> 3. Subject - Observer 간 느슨한 결합은 어떻게 할까 (스프링 내부코드) 
-
-
-SimpleApplicationEventMulticaster
+3. Subject - Observer 간 결합은 어떻게 "느슨하게" 되어있을까
+> 스프링 내부코드를 봐봅시다.
+> SimpleApplicationEventMulticaster 
 
 ``` java:SimpleApplicationEventMulticaster.java
 	@Override
