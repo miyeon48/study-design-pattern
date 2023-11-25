@@ -65,6 +65,21 @@ public class AppRunner implements ApplicationRunner {
 > 3. Subject - Observer 간 느슨한 결합은 어떻게 할까 (스프링 내부코드) 
 
 
+```JAVA
+	@Override
+	public void multicastEvent(ApplicationEvent event, @Nullable ResolvableType eventType) {
+		ResolvableType type = (eventType != null ? eventType : ResolvableType.forInstance(event));
+		Executor executor = getTaskExecutor();
+		for (ApplicationListener<?> listener : getApplicationListeners(event, type)) {
+			if (executor != null && listener.supportsAsyncExecution()) {
+				executor.execute(() -> invokeListener(listener, event));
+			}
+			else {
+				invokeListener(listener, event);
+			}
+		}
+  }
+```
 
 
 
