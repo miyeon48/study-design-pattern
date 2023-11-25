@@ -28,8 +28,8 @@
 ---------------
 ## 목차 
 
-- 전략 패턴
-- 옵저버 패턴
+- [전략 패턴](https://github.com/miyeon48/study-design-pattern/tree/main/src/main/java/com/design/strategy)
+- [옵저버 패턴](https://github.com/miyeon48/study-design-pattern/blob/main/src/main/java/com/design/observer/observer.md)
 - 데코레이터 패턴
 - 팩토리 패턴
 - 싱글톤 패턴
