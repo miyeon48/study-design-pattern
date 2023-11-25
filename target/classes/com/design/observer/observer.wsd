@@ -1,0 +1,37 @@
+@startuml test
+
+interface Subject {
+    +registerObserver(Observer): void
+    +removeObserver(Observer): void
+    +notifyObservers(): void
+       
+}
+
+class CreateSubject {
+    +registerObserver(Observer): void
+    +removeObserver(Observer): void
+    +notifyObservers(): void
+    +getState(): void
+    +setState(): void
+}
+
+interface Observer {
+    +update(): void
+}
+
+
+class CreateObserverA {
+    +update(): void
+}
+
+class CreateObserverB {
+    +update(): void
+}
+
+
+Observer  <|.. CreateObserverA
+Observer  <|.. CreateObserverB
+Subject  <|.. CreateSubject
+Subject --> Observer 
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml test
+
+interface Subject {
+    +registerObserver(Observer): void
+    +removeObserver(Observer): void
+    +notifyObservers(): void
+       
+}
+
+class WeatherData {
+    +registerObserver(Observer): void
+    +removeObserver(Observer): void
+    +notifyObservers(): void
+    +getTemperature(): void
+    +getHumidity(): void
+    +getPressure(): void
+    +measurementsChanged(): void
+}
+
+interface Observer {
+    +update(): void
+}
+
+
+class CurrentConditionsDisplay {
+    +update(): void
+    +display(): void
+}
+
+class ForecastDisplay {
+    +update(): void
+    +display(): void
+}
+
+
+class StatisticsDisplay {
+    +update(): void
+    +display(): void
+}
+
+
+interface DisplayElement {
+    +display(): void
+}
+
+Subject --> Observer 
+Subject <|.. WeatherData 
+
+Observer  <|.. CurrentConditionsDisplay
+Observer  <|.. ForecastDisplay
+Observer  <|.. StatisticsDisplay
+
+DisplayElement  <|.. CurrentConditionsDisplay
+DisplayElement  <|.. ForecastDisplay
+DisplayElement  <|.. StatisticsDisplay
+
+CurrentConditionsDisplay --> WeatherData
+ForecastDisplay --> WeatherData
+StatisticsDisplay --> WeatherData
+
+@enduml
