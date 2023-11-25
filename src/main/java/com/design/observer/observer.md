@@ -17,15 +17,16 @@
 ### 옵저버 vs 출판-구독 패턴
 > 작성예정
 
-### 옵저버 패턴 적용예제
+### 옵저버 패턴 적용 예제
 
 > 스프링 프레임워크 이벤트 동작원리 
 
 - ApplicationListener ▶ Observer
 - ApplicationEventPublisher ▶ Subject
 
+
 1. 옵저버 생성 (리스너 등록) 
-```
+```JAVA
 @Component
 public class ObserverListenerA implements ApplicationListener<AppEvent> {
     
@@ -35,7 +36,7 @@ public class ObserverListenerA implements ApplicationListener<AppEvent> {
     }
 }
 ```
-```
+```JAVA
 @Component
 public class ObserverListenerB implements ApplicationListener<AppEvent> {
     
@@ -48,7 +49,7 @@ public class ObserverListenerB implements ApplicationListener<AppEvent> {
 
 2. 정보 갱신
 
-```
+```JAVA
 @Component
 public class AppRunner implements ApplicationRunner {
  
