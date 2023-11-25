@@ -64,7 +64,10 @@ public class AppRunner implements ApplicationRunner {
 
 > 3. Subject - Observer 간 느슨한 결합은 어떻게 할까 (스프링 내부코드) 
 
-```JAVA
+
+SimpleApplicationEventMulticaster
+
+``` java:SimpleApplicationEventMulticaster.java
 	@Override
 	public void multicastEvent(ApplicationEvent event, @Nullable ResolvableType eventType) {
 		ResolvableType type = (eventType != null ? eventType : ResolvableType.forInstance(event));
@@ -77,7 +80,7 @@ public class AppRunner implements ApplicationRunner {
 				invokeListener(listener, event);
 			}
 		}
-  }
+	}
 ```
 
 
