@@ -1,6 +1,6 @@
 옵저버 패턴 (Observer Pattern) 
 ---
-### 객체의 상태값이 변경되면 그 객체의 의존하는 다른 객체에게 연락이 가고 자동으로 갱신되는 패턴
+#### 객체의 상태값이 변경되면 그 객체의 의존하는 다른 객체에게 연락이 가고 자동으로 갱신되는 패턴
 
 ![image](https://github.com/miyeon48/study-design-pattern/assets/17865304/a757a754-5a70-4ebc-b532-93d5bb1c8135)
 
@@ -14,8 +14,8 @@
 
 ---
 ### 옵저버 패턴 적용예제1
-💡스프링 프레임워크에 적용된 옵저버 패턴을 찾아보자
 
+💡스프링 프레임워크에 적용된 옵저버 패턴을 찾아보자
 
 > 스프링 프레임워크 이벤트 동작원리
 
@@ -23,7 +23,7 @@
 - Subject  ➡️ ApplicationEventPublisher  
 
 
-1. 옵저버 생성 (리스너 등록) 
+1. 옵저버 생성
 ```JAVA
 @Component
 public class ObserverListenerA implements ApplicationListener<AppEvent> {
@@ -46,10 +46,9 @@ public class ObserverListenerB implements ApplicationListener<AppEvent> {
 }
 ```
 
+2. Subject->Observer에게 정보 갱신요청
 
-2. Subject가 Observer에게 정보 갱신요청
-ApplicationEventPublisher는 주로 Spring Context에 의해서 구현되어 사용됩니다.
-
+ApplicationEventPublisher는 주로 Spring Context에 의해서 구현됨
 
 ```JAVA
 @Component
@@ -66,11 +65,11 @@ public class AppRunner implements ApplicationRunner {
 
 ```
 
-3. Subject - Observer 간 결합은 어떻게 "느슨하게" 되어있을까
-스프링 내부코드를 봐봅시다.
+3. Subject-Observer 간 느슨한 결합
 
-SimpleApplicationEventMulticaster 
-``` java:SimpleApplicationEventMulticaster.java
+[스프링 내부코드] SimpleApplicationEventMulticaster 
+
+```JAVA
 	@Override
 	public void multicastEvent(ApplicationEvent event, @Nullable ResolvableType eventType) {
 		ResolvableType type = (eventType != null ? eventType : ResolvableType.forInstance(event));
@@ -87,9 +86,32 @@ SimpleApplicationEventMulticaster
 ```
 
 
+---
+### 옵저버 패턴 적용예제2
 
-### 옵저버 vs 출판-구독 패턴
+#### 기상 모니터링 애플리케이션
 
-> 작성예정
+- 3가지 기상조건 (온도, 습도, 기압) 가져오기 
+- 조회 시 실시간 갱신하여 화면에 표시
 
 
+![Alt text](observer-weatherstation-uml.png)
+
+---
+
+### 발행-구독 패턴
+
+- 발행자와 구독자 개념이 Observer/Subject 개념과 유사
+- 그러나 발행-구독패턴은 사이에 이벤트 브로커가 있어 더욱 느슨한 결합을 제공함
+
+
+---
+### 발행-구독패턴의 사용 
+
+- 미들웨어 통신에서 주로 사용됨  
+- 메시지큐를 이용한 비동기식 메시지 시스템 
+- 최근에 message broker의 역할로 redis, kafka, RebbitMQ 등이 사용됨
+
+
+
+![Alt text](pubsub-uml.png)

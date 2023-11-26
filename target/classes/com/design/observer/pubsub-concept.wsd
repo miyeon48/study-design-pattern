@@ -1,0 +1,45 @@
+@startuml pubsub
+
+
+interface Subscriber {
+  + update(message: Message): void
+}
+
+class ConcreteSubscriber1 implements Subscriber {
+  + update(message: Message): void
+}
+
+class ConcreteSubscriber2 implements Subscriber {
+  + update(message: Message): void
+}
+
+class EventBroker {
+  - eventSubscribers: Map<String, List<Subscriber>>
+  + addSubscriber(event: String, subscriber: Subscriber): void
+  + removeSubscriber(event: String, subscriber: Subscriber): void
+  + notifySubscribers(event: String, message: Message): void
+}
+
+class Publisher {
+  - subscribers: List<Subscriber>
+  + addSubscriber(subscriber: Subscriber): void
+  + removeSubscriber(subscriber: Subscriber): void
+  + notifySubscribers(message: Message): void
+}
+
+class ConcretePublisher extends Publisher {
+  + setState(state: String): void
+}
+
+Subscriber <|-- ConcreteSubscriber1
+Subscriber <|-- ConcreteSubscriber2
+
+EventBroker --|> Subscriber : <<interface>>
+
+Publisher --|> Subscriber : <<interface>>
+ConcretePublisher --|> Publisher
+
+ConcretePublisher --> EventBroker
+
+
+@enduml
