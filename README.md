@@ -23,15 +23,16 @@
 - 상속보다는 구성
 - 구현보다는 인터페이스에 맞춰 프로그래밍
 - 객체 간 느슨한 결합
-- OCP [Open/Closed principle 개방-폐쇄 원칙] : 확장에는 열려있어야하고 변경에는 닫혀있어야 함
+- OCP(Open/Closed principle 개방-폐쇄 원칙) 
+    - 확장에는 열려있어야하고 변경에는 닫혀있어야 함
 
 
 ---------------
 ## 목차 
 🍀 디자인 패턴
-- [전략 패턴](https://github.com/miyeon48/study-design-pattern/tree/main/src/main/java/com/design/strategy)
-- [옵저버 패턴](https://github.com/miyeon48/study-design-pattern/blob/main/src/main/java/com/design/observer/observer.md)
-- [데코레이터 패턴]
+- [전략 패턴](src/main/java/com/design/strategy)
+- [옵저버 패턴](src/main/java/com/design/observer/Observer.md)
+- [데코레이터 패턴](src/main/java/com/design/decorater/Decorater.md)
 - 팩토리 패턴
 - 싱글톤 패턴
 - 커맨드 패턴
