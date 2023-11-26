@@ -1,4 +1,4 @@
-package com.design.decorater.example;
+package com.design.decorater.example.starbuzz;
 
 public class HouseBlend extends Beverage {
 	public HouseBlend() {

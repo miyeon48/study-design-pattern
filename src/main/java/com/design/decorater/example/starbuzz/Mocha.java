@@ -1,4 +1,4 @@
-package com.design.decorater.example;
+package com.design.decorater.example.starbuzz;
 
 public class Mocha extends CondimentDecorator {
 	public Mocha(Beverage beverage) {

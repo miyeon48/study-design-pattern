@@ -13,10 +13,11 @@
   (분산 시스템에서 효과적인 통신 시 출판 구독 패턴도 많이 사용됨)
 
 ---
-### 옵저버 패턴 적용 예제
+### 옵저버 패턴 적용예제1
+💡스프링 프레임워크에 적용된 옵저버 패턴을 찾아보자
 
 
-스프링 프레임워크 이벤트 동작원리
+> 스프링 프레임워크 이벤트 동작원리
 
 - Observer ➡️ ApplicationListener  
 - Subject  ➡️ ApplicationEventPublisher  
@@ -47,7 +48,7 @@ public class ObserverListenerB implements ApplicationListener<AppEvent> {
 
 
 2. Subject가 Observer에게 정보 갱신요청
-> ApplicationEventPublisher는 주로 Spring Context에 의해서 구현되어 사용됩니다.
+ApplicationEventPublisher는 주로 Spring Context에 의해서 구현되어 사용됩니다.
 
 
 ```JAVA
@@ -66,9 +67,9 @@ public class AppRunner implements ApplicationRunner {
 ```
 
 3. Subject - Observer 간 결합은 어떻게 "느슨하게" 되어있을까
-> 스프링 내부코드를 봐봅시다.
-> SimpleApplicationEventMulticaster 
+스프링 내부코드를 봐봅시다.
 
+SimpleApplicationEventMulticaster 
 ``` java:SimpleApplicationEventMulticaster.java
 	@Override
 	public void multicastEvent(ApplicationEvent event, @Nullable ResolvableType eventType) {
@@ -87,8 +88,8 @@ public class AppRunner implements ApplicationRunner {
 
 
 
-
 ### 옵저버 vs 출판-구독 패턴
+
 > 작성예정
 
 

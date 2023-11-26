@@ -54,9 +54,12 @@ Beverage <-- Espresso
 Beverage <-- DarkRoast
 Beverage <-- Decaf
 Beverage <-- CondimentDecorator
+
 CondimentDecorator <--Milk 
 CondimentDecorator <--Mocha 
 CondimentDecorator <--Soy 
 CondimentDecorator <--Whip 
+
 Beverage <|..  CondimentDecorator
+
 @enduml

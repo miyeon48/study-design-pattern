@@ -1,6 +1,6 @@
-package com.design.decorater.example;
+package com.design.decorater.example.starbuzz;
 
-import com.design.decorater.example.Beverage.Size;
+import com.design.decorater.example.starbuzz.Beverage.Size;
 
 public class StarbuzzCoffee {
  

@@ -1,4 +1,4 @@
-package com.design.decorater.example;
+package com.design.decorater.example.starbuzz;
 
 public class Decaf extends Beverage {
 	public Decaf() {

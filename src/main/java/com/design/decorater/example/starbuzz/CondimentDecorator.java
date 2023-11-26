@@ -1,4 +1,4 @@
-package com.design.decorater.example;
+package com.design.decorater.example.starbuzz;
 
 public abstract class CondimentDecorator extends Beverage {
 	public Beverage beverage; //감쌀 객체 지정
