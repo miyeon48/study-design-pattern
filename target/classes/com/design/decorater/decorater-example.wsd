@@ -1,0 +1,62 @@
+@startuml test
+
+interface Beverage {
+    description
+    +getdDdescription(String): void
+    +cost(): string
+}
+
+class HouseBlend {
+    +cost(): string
+}
+
+
+class Espresso {
+    +cost(): string
+}
+
+class DarkRoast {
+    +cost(): string
+}
+
+class Decaf {
+    +cost(): string
+}
+
+class CondimentDecorator {
+    +description(): void
+}
+
+
+class Milk {
+    +cost(): string
+    +description(): void
+}
+
+class Mocha {
+    +cost(): string
+    +description(): void
+}
+
+class Soy {
+    +cost(): string
+    +description(): void
+}
+
+class Whip {
+    +cost(): string
+    +description(): void
+}
+
+
+Beverage <-- HouseBlend 
+Beverage <-- Espresso
+Beverage <-- DarkRoast
+Beverage <-- Decaf
+Beverage <-- CondimentDecorator
+CondimentDecorator <--Milk 
+CondimentDecorator <--Mocha 
+CondimentDecorator <--Soy 
+CondimentDecorator <--Whip 
+Beverage <|..  CondimentDecorator
+@enduml
