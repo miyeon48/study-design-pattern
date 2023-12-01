@@ -25,7 +25,8 @@
 - 객체 간 느슨한 결합
 - OCP (Open-Closed principle) : 개방-폐쇄 원칙 
     - 확장에는 열려있어야하고 변경에는 닫혀있어야 함
-
+- DIP (Dependency Inversion Principle) : 의존성 뒤집기 원칙 
+    - 추상화 된 것에 의존하고 구상 클래스에게는 의존하지 않아야함 
 
 
 ## 목차 
@@ -33,7 +34,7 @@
 - 전략 패턴
 - [옵저버 패턴과 발행-구독 패턴](src/main/java/com/design/observer/Observer.md)
 - [데코레이터 패턴](src/main/java/com/design/decorater/Decorater.md)
-- 팩토리 패턴
+- [팩토리 패턴](src/main/java/com/design/decorater/Factroy.md)
 - 싱글톤 패턴
 - 커맨드 패턴
 - 어댑터 패턴/퍼사드 패턴

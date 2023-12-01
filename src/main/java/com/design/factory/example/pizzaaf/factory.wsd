@@ -1,0 +1,39 @@
+@startuml factroy
+
+class BlackOlives {}
+
+interface Cheese {}
+
+class CheesePizza {}
+
+
+class ChicagoPizzaStore{}
+abstract class PizzaStore {}
+class ClamPizza{}
+class Clams{}
+interface Dough{}
+interface Veggies {}
+abstract class Pizza{}
+class Eggplant{}
+class FreshClams{}
+class FrozenClams{}
+class Garlic{}
+class MarinaraSauce{}
+class MozzarellaCheese{}
+class Mushroom{}
+interface PizzaIngredientFactory {}
+class NYPizzaIngredientFactory{}
+interface PizzaIngredientFactory
+class MarinaraSauce{}
+interface Sauce{}
+class VeggiePizza{}  
+
+interface PizzaIngredientFactory
+class ChicagoPizzaIngredientFactory{}
+class NYPizzaIngredientFactory{}
+class NYPizzaStore{}
+
+PizzaIngredientFactory <|.. ChicagoPizzaIngredientFactory
+PizzaIngredientFactory <|.. NYPizzaIngredientFactory
+PizzaIngredientFactory <--NYPizzaStore 
+@enduml

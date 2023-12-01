@@ -1,0 +1,40 @@
+@startuml SimplePizzaFactroy
+
+class PizzaStore {
+    +orderPizza()
+       
+}
+
+class SimplePizzaFactroy {
+    +createPizza()
+}
+
+abstract class Pizza{
+    +prepare()
+    +bake()
+    +cut()
+    +box()
+}
+
+
+class CheesePizza {
+}
+
+class PepperoniPizza {
+}
+
+class VeggiePizza {
+}
+
+class ClamPizza {
+}
+
+PizzaStore ..|> SimplePizzaFactroy 
+SimplePizzaFactroy ..|> Pizza 
+
+Pizza  <-- CheesePizza
+Pizza  <-- PepperoniPizza
+Pizza  <-- VeggiePizza
+Pizza  <--  ClamPizza
+
+@enduml
