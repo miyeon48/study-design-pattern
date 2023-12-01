@@ -34,7 +34,7 @@
 - 전략 패턴
 - [옵저버 패턴과 발행-구독 패턴](src/main/java/com/design/observer/Observer.md)
 - [데코레이터 패턴](src/main/java/com/design/decorater/Decorater.md)
-- [팩토리 패턴](src/main/java/com/design/decorater/Factroy.md)
+- [팩토리 패턴](src/main/java/com/design/factory/Factory.md)
 - 싱글톤 패턴
 - 커맨드 패턴
 - 어댑터 패턴/퍼사드 패턴
