@@ -51,8 +51,7 @@ public class ChicagoPizzaStore extends PizzaStore {
 - 구상 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체로 이뤄지는 제품군을 생성하는 인터페이스 제공
 - 여러 연관된 객체의 생성을 담당하는 인터페이스를 제공함
 
-#### 💡<헤드퍼스트 예시> Pizza Store Framework
-![Alt text](example/pizzafm/factroymetod.png)
+#### 💡<헤드퍼스트 예시> 
 
 ```JAVA
 // PizzaIngredientFactory : interface  
@@ -66,7 +65,7 @@ public interface PizzaIngredientFactory {
 	public Clams createClam();
  
 }
-
+```
 ```JAVA
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
  
