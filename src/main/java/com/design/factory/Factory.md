@@ -29,9 +29,7 @@
 public abstract class PizzaStore {
 	abstract Pizza createPizza(String item);
 }
-```
 
-```JAVA
 public class ChicagoPizzaStore extends PizzaStore {
 
 	Pizza createPizza(String item) {
