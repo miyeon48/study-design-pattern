@@ -36,7 +36,7 @@
 - [데코레이터 패턴](src/main/java/com/design/decorater/Decorater.md)
 - [팩토리 패턴](src/main/java/com/design/factory/Factory.md)
 - [싱글톤 패턴](src/main/java/com/design/singleton/Singleton.md)
-- 커맨드 패턴
+- [커맨드 패턴](src/main/java/com/design/singleton/Command.md)
 - 어댑터 패턴/퍼사드 패턴
 - 템플릿 메소드 패턴
 - 반복자 패턴과 컴포지트 패턴
