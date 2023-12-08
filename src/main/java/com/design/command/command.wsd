@@ -1,0 +1,36 @@
+@startuml test
+
+interface Command {
+    execute()
+    undo()
+}
+
+class invoker {
+    setcommand()
+}
+
+
+class client {
+}
+
+class Receiver {
+    action()
+}
+
+class ConcreteCommand {
+    execute()
+    undo()
+}
+
+
+
+Command <-- invoker 
+invoker <-- client
+Receiver <-- client
+ConcreteCommand <-- client
+Receiver <-- ConcreteCommand
+ConcreteCommand <-- client
+ConcreteCommand <|..  Command
+
+
+@enduml
