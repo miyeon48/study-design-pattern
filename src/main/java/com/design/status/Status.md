@@ -6,24 +6,26 @@
 --- 
 ### 상태패턴 적용예시 I
 
-💡 고객 상태정보와 관련하여 상태패턴을 적용해보자 
+> 💡 고객 상태정보와 관련하여 패턴을 적용해보자 
 
-> 휴면고객 : 장기간 카드를 사용하지 않아 카드시스템을 이용할 수 없는 고객
-> 일반고객 : 일반적인 카드시스템을 이용할 수있는 고객 (카드만들기, 사용하기) 
-> VIP고객 : 포인트 및 페이백 등 추가 혜택을 받는 고객 
+- 휴면고객 : 장기간 카드를 사용하지 않아 카드시스템을 이용할 수 없는 고객
+- 일반고객 : 일반적인 카드시스템을 이용할 수있는 고객 
+- VIP고객 : 카드사용율이 높아 포인트 및 페이백 등 추가 혜택을 받는 고객 
 
+#### 소스코드 
 ```JAVA 
+// State 인터페이스
+// 모든 상태 클래스에서 사용할 인터페이스
 public interface CustomerState {
-    void createCard();
-    void useCard();
-    void receiveBenefits();
-	void upgrade();
+    void createCard(); 
+    void useCard();    
+    void receiveBenefits(); 
+	void upgrade(Customer customer); // 상태 레퍼런스 전달  
 }
 ```
 
 ```JAVA 
-
-// 휴면 고객 상태
+// 휴면고객 상태클래스
 public class DormantCustomer implements CustomerState {
 
     @Override
@@ -48,7 +50,7 @@ public class DormantCustomer implements CustomerState {
 }
 
 
-// 일반 고객 상태
+// 일반고객 상태클래스
 public class RegularCustomer implements CustomerState {
     @Override
     public void createCard() {
@@ -72,12 +74,12 @@ public class RegularCustomer implements CustomerState {
 }
 
 
-// VIP 고객 상태
+// VIP고객 상태클래스
 public class VipCustomer implements CustomerState {
 
     @Override
     public void createCard() {
-        System.out.println("VIP고객은 카드를 만들수 있습니다.");
+        System.out.println("VIP고객은 카드를 만들수있습니다.");
     }
 
     @Override
@@ -87,17 +89,19 @@ public class VipCustomer implements CustomerState {
 
     @Override
     public void receiveBenefits() {
-        System.out.println("추가적인 할인 혜택을 받을 수 있습니다.");
+        System.out.println("추가적인 할인 혜택을 받을수있습니다.");
     }
 
 	@Override
 	public void upgrade(Customer customer) {
-		
+		System.out.println("더이상 업그레이드 할수없습니다.");
 	}
 }
+```
 
+```JAVA 
 // 고객 클래스 (컨택스트 객체)
-// 컨텍스트가 제어의 주체 (객체의 내부 상태를 관리하고 상태가 변경될 때마다 해당 상태에 따른 행동을 수행하는 것) 
+// 객체의 내부 상태를 관리하고 상태가 변경될 때마다 해당 상태에 따른 행동을 수행하는 것 
 public class Customer {
     private CustomerState currentState;
 
@@ -127,18 +131,20 @@ public class Customer {
     }
 }
 
+```
+```JAVA 
 //메인클래스 
 public class Main {
     public static void main(String[] args) {
 
 		//일반고객
-        Customer customer = new RegularCustomer();
+        Customer customer = new Customer();
         customer.createCard();
         customer.useCard();
         customer.receiveBenefits();
 
         // VIP로 상태 변경
-     	customer.upgread();
+     	customer.upgrade();
 	 	customer.useCard();
         customer.receiveBenefits();
 
