@@ -41,7 +41,7 @@
 - [템플릿 메소드 패턴](src/main/java/com/design/templateMethod/templateMethod.md)
 - 반복자 패턴과 컴포지트 패턴
 - [상태 패턴](src/main/java/com/design/status/status.md)
-- 프록시 패턴
+- [프록시 패턴](src/main/java/com/design/proxy/Proxy.md)
 - 복합 패턴
 - 그 외 패턴들
 
